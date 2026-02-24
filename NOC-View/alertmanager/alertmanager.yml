@@ -1,0 +1,18 @@
+global:
+  smtp_smarthost: "smtp.gmail.com:587"
+  smtp_from: "sbharath8900@gmail.com"
+  smtp_auth_username: "sbharath8900@gmail.com"
+  smtp_auth_password: "dqkvrvxvksghpbif"
+  smtp_require_tls: true
+
+route:
+  receiver: "gmail"
+  group_wait: 5s
+  group_interval: 15s
+  repeat_interval: 1m
+
+receivers:
+- name: "gmail"
+  email_configs:
+  - to: "sbharath8453@gmail.com"
+    send_resolved: true

@@ -1,0 +1,32 @@
+groups:
+- name: system-alerts
+  rules:
+
+  - alert: HighCPUUsage
+    expr: cpu_usage_percent > 80
+    for: 15s
+    labels:
+      severity: critical
+    annotations:
+      summary: "High CPU usage"
+      description: "CPU usage above 80%"
+
+  - alert: HighLatency
+    expr: network_latency_ms > 100
+    for: 15s
+    labels:
+      severity: warning
+    annotations:
+      summary: "High network latency"
+      description: "Latency above 100ms"
+
+  - alert: PacketLossDetected
+    expr: packet_loss_percent > 2
+    for: 15s
+    labels:
+      severity: critical
+    annotations:
+      summary: "Packet loss detected"
+      description: "Packet loss above 2%"
+
+ 
